@@ -18,7 +18,7 @@ while true; do
         break
     fi
 
-    mpirun -np 8 ./train_gpt2cu \
+    mpirun --allow-run-as-root -np 4 ./train_gpt2cu \
                 -i "dev/data/fineweb100B/fineweb_train_*.bin" \
                 -j "dev/data/fineweb100B/fineweb_val_*.bin" \
                 -o $out_dir \
